@@ -7,14 +7,14 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import "./style/dark.scss";
 import { useContext } from "react";
 import { DarkModeContext } from "./context/darkModeContext";
-import { AuthContext } from "./context/AuthContext";
+//import { AuthContext } from "./context/AuthContext";
 import {  productColumns,transactionColumns, userColumns } from "./datatablesource";
 import NewProduct from "./pages/newProduct/NewProduct";
 import NewTransaction from "./pages/newTransaction/NewTransaction";
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
-
+/*
   const ProtectedRoute = ({ children }) => {
     const { user } = useContext(AuthContext);
 
@@ -24,7 +24,7 @@ function App() {
 
     return children;
   };
-
+*/
   return (
     <div className={darkMode ? "app dark" : "app"}>
       <BrowserRouter>
@@ -34,34 +34,34 @@ function App() {
             <Route
               index
               element={
-                <ProtectedRoute>
+                //<ProtectedRoute>
                   <Home />
-                </ProtectedRoute>
+                //</ProtectedRoute>
               }
             />
             <Route path="users">
               <Route
                 index
                 element={
-                  <ProtectedRoute>
+                  //<ProtectedRoute>
                     <List columns={userColumns} />
-                  </ProtectedRoute>
+                  //</ProtectedRoute>
                 }
               />
               <Route
                 path=":userId"
                 element={
-                  <ProtectedRoute>
+                  //<ProtectedRoute>
                     <Single />
-                  </ProtectedRoute>
+                  //</ProtectedRoute>
                 }
               />
               <Route
                 path="new"
                 element={
-                  <ProtectedRoute>
+                  //<ProtectedRoute>
                     <New />
-                  </ProtectedRoute>
+                  //</ProtectedRoute>
                 }
               />
             </Route>
@@ -69,25 +69,25 @@ function App() {
               <Route
                 index
                 element={
-                  <ProtectedRoute>
+                  //<ProtectedRoute>
                     <List columns={transactionColumns} />
-                  </ProtectedRoute>
+                  //</ProtectedRoute>
                 }
               />
               <Route
                 path=":productId"
                 element={
-                  <ProtectedRoute>
+                  //<ProtectedRoute>
                     <Single />
-                  </ProtectedRoute>
+                  //</ProtectedRoute>
                 }
               />
               <Route
                 path="new"
                 element={
-                  <ProtectedRoute>
+                  //<ProtectedRoute>
                     <NewTransaction />
-                  </ProtectedRoute>
+                  //</ProtectedRoute>
                 }
               />
             </Route>
@@ -95,25 +95,25 @@ function App() {
               <Route
                 index
                 element={
-                  <ProtectedRoute>
+                  //<ProtectedRoute>
                     <List columns={productColumns} />
-                  </ProtectedRoute>
+                  //</ProtectedRoute>
                 }
               />
               <Route
                 path=":productId"
                 element={
-                  <ProtectedRoute>
+                  //<ProtectedRoute>
                     <Single />
-                  </ProtectedRoute>
+                  //</ProtectedRoute>
                 }
               />
               <Route
                 path="new"
                 element={
-                  <ProtectedRoute>
+                  //<ProtectedRoute>
                     <NewProduct/>
-                  </ProtectedRoute>
+                  //</ProtectedRoute>
                 }
               />
             </Route>
