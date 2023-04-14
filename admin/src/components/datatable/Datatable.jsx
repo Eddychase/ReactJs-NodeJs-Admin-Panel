@@ -35,7 +35,7 @@ const Datatable = ({columns}) => {
       renderCell: (params) => {
         return (
           <div className="cellAction">
-            <Link to={`https://admin-panel-shop.onrender.com/api/${path}/${path.id}`} style={{ textDecoration: "none" }}>
+            <Link to={`/${path}/${path.id}`} style={{ textDecoration: "none" }}>
               <div className="viewButton">View</div>
             </Link>
             <div
