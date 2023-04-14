@@ -62,6 +62,7 @@ const Featured = () => {
         <p className="amount">${dailyTotalPrice}</p>
         <p className="desc">
           Previous transactions processing. Last payments may not be included.
+          {totalPrice}
         </p>
       </div>
     </div>

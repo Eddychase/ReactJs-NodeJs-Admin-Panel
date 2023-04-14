@@ -14,7 +14,6 @@ const Widget = ({ type }) => {
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalProducts, setTotalProducts] = useState(0);
   const [totalUsers, setTotalUsers] = useState(0);
-  const [daysActive, setDaysActive] = useState(0);
   let data;
   const diff=20;
 
@@ -52,13 +51,7 @@ const Widget = ({ type }) => {
         console.log(users);
         const numUsers = users.count.total;
         setTotalUsers(numUsers);
-        // Calculate the number of days since today
-        const today = new Date();
-        const activeDate = new Date("2023-03-31"); // Replace this with your desired date
-        const days = Math.floor(
-          (today.getTime() - activeDate.getTime()) / (1000 * 3600 * 24)
-        );
-        setDaysActive(days);
+        
       })
       .catch((error) => console.log(error));
   }, [type]);
