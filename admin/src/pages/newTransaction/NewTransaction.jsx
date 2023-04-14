@@ -40,7 +40,7 @@ const NewTransaction = () => {
         productId: selectedProduct,
       };
       await axios.post(
-        "/api/transactions",
+        "https://admin-panel-shop.onrender.com/api/transactions",
         newTransaction
       );
       navigate("/");
