@@ -20,7 +20,7 @@ const Datatable = ({columns}) => {
  
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`https://admin-panel-shop.onrender.com/${path}/${id}`);
+      await axios.delete(`https://admin-panel-shop.onrender.com/api/${path}/${id}`);
       setList(list.filter((item) => item._id !== id));
     } catch (err) {}
   };
