@@ -13,7 +13,7 @@ const Featured = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8800/api/transactions")
+      .get("https://admin-panel-shop.onrender.com/api/transactions")
       .then((response) => {
         const transactions = response.data;
         const numTransactions = transactions.length;
