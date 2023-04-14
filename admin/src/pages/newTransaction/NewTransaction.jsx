@@ -15,7 +15,7 @@ const NewTransaction = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get("/api/products");
+        const response = await axios.get("https://admin-panel-shop.onrender.com/api/products");
         setProductList(response.data);
       } catch (err) {
         console.log(err);

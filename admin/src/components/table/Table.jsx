@@ -13,7 +13,7 @@ const List = () => {
   const [transactions, setTransactions] = useState([]);
 
   useEffect(() => {
-    axios.get("/api/transactions").then((res) => {
+    axios.get("https://admin-panel-shop.onrender.com/api/transactions").then((res) => {
       setTransactions(res.data);
     });
   }, []);

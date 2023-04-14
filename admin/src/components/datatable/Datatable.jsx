@@ -9,7 +9,7 @@ const Datatable = ({columns}) => {
   const location = useLocation();
   const path = location.pathname.split("/")[1];
   const [list, setList] = useState([]);
-  const { data } = useFetch(`/${path}`);
+  const { data } = useFetch(`https://admin-panel-shop.onrender.com/api/${path}`);
 
   useEffect(() => {
     if (Array.isArray(data)) {
@@ -35,7 +35,7 @@ const Datatable = ({columns}) => {
       renderCell: (params) => {
         return (
           <div className="cellAction">
-            <Link to={`/${path}/${path.id}`} style={{ textDecoration: "none" }}>
+            <Link to={`https://admin-panel-shop.onrender.com/${path}/${path.id}`} style={{ textDecoration: "none" }}>
               <div className="viewButton">View</div>
             </Link>
             <div
