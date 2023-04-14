@@ -13,7 +13,7 @@ const Chart = ({ aspect, title }) => {
   const [transactions, setTransactions] = useState([]);
 
   useEffect(() => {
-    fetch("/transactions")
+    fetch("https://admin-panel-shop.onrender.com/api/transactions")
       .then((response) => response.json())
       .then((data) => setTransactions(data));
   }, []);
