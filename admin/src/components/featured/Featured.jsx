@@ -19,7 +19,7 @@ const Featured = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8800/api/transactions")
+      .get("https://admin-panel-shop.onrender.com/api/transactions")
       .then((response) => {
         const transactions = response.data;
         const numTransactions = transactions.length;
@@ -91,7 +91,7 @@ const Featured = () => {
 
   
     axios
-      .get("http://localhost:8800/api/products")
+      .get("https://admin-panel-shop.onrender.com/api/products")
       .then((response) => {
         const products = response.data;
         const totalBuyingPrice = products.reduce(

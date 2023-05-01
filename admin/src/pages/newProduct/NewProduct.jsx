@@ -30,7 +30,7 @@ const NewProduct = () => {
         ...info,
       };
 
-      await axios.post("http://localhost:8800/api/products", newProduct);
+      await axios.post("https://admin-panel-shop.onrender.com/api/products", newProduct);
       navigate("/");
     } catch (err) {console.log(err)}
   };

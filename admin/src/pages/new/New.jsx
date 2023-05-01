@@ -26,7 +26,7 @@ const New = ({ inputs, title }) => {
         ...info,
       };
 
-      await axios.post("http://localhost:8800/api/auth/register", newUser);
+      await axios.post("https://admin-panel-shop.onrender.com/api/auth/register", newUser);
       navigate("/");
     } catch (err) {
       console.log(err);
