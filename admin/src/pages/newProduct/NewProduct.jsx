@@ -7,6 +7,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const NewProduct = () => {
+  const [file, setFiles] = useState("");
   const [info, setInfo] = useState([]);
   const navigate = useNavigate();
 
@@ -16,11 +17,12 @@ const NewProduct = () => {
 
   
   
-
+  console.log(file)
 
   const handleClick = async (e) => {
     e.preventDefault();
     const data = new FormData();
+          data.append("file", file);
           data.append("upload_preset", "upload");
     try {
 
@@ -28,7 +30,7 @@ const NewProduct = () => {
         ...info,
       };
 
-      await axios.post("https://admin-panel-shop.onrender.com/api/products", newProduct);
+      await axios.post("http://localhost:8800/api/products", newProduct);
       navigate("/");
     } catch (err) {console.log(err)}
   };
@@ -42,7 +44,14 @@ const NewProduct = () => {
         </div>
         <div className="bottom">
           <div className="left">
-            
+            <img
+              src={
+                file
+                  ? URL.createObjectURL(file[0])
+                  : "https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"
+              }
+              alt=""
+            />
           </div>
           <div className="right">
             <form>

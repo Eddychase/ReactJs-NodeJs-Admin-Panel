@@ -49,3 +49,13 @@ export const getProducts = async (req,res,next) => {
         next(err);
       }
 }
+
+export const getFilteredProducts = async (req, res) => {
+    const searchQuery = req.query.search || "";
+    const regex = new RegExp(searchQuery, "i");
+    const products = await Product.find({
+      $or: [{ name: regex }, { description: regex }]
+    });
+    res.status(200).json(products);
+  };
+  

@@ -9,24 +9,32 @@ const Datatable = ({columns}) => {
   const location = useLocation();
   const path = location.pathname.split("/")[1];
   const [list, setList] = useState([]);
-  const { data } = useFetch(`https://admin-panel-shop.onrender.com/api/${path}`);
+  const { data } = useFetch(`/${path}`);
 
   useEffect(() => {
+    let mounted = true;
+
     if (Array.isArray(data)) {
       setList(data);
     }
+
+    return () => {
+      // Clean up function to cancel asynchronous task
+      mounted = false;
+    };
   }, [data]);
 
- 
+
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`https://admin-panel-shop.onrender.com/api/${path}/${id}`);
-      setList(list.filter((item) => item._id !== id));
+      await axios.delete(`/${path}/${id}`);
+      if (list.length > 0) {
+        setList(list.filter((item) => item._id !== id));
+      }
     } catch (err) {}
   };
 
   
-
   const actionColumn = [
     {
       field: "action",
@@ -35,7 +43,7 @@ const Datatable = ({columns}) => {
       renderCell: (params) => {
         return (
           <div className="cellAction">
-            <Link to={`https://admin-panel-shop.onrender.com/${path}/${path.id}`} style={{ textDecoration: "none" }}>
+            <Link to={`/${path}/${path.id}`} style={{ textDecoration: "none" }}>
               <div className="viewButton">View</div>
             </Link>
             <div
@@ -49,6 +57,7 @@ const Datatable = ({columns}) => {
       },
     },
   ];
+  
   return (
     <div className="datatable">
       <div className="datatableTitle">
@@ -58,14 +67,14 @@ const Datatable = ({columns}) => {
         </Link>
       </div>
       <DataGrid
-  className="datagrid"
-  rows={list}
-  columns={columns.concat(actionColumn)}
-  pageSize={9}
-  rowsPerPageOptions={[9]}
-  checkboxSelection
-  getRowId={(row) => row._id}
-/>
+        className="datagrid"
+        rows={list}
+        columns={columns.concat(actionColumn)}
+        pageSize={9}
+        rowsPerPageOptions={[9]}
+        checkboxSelection
+        getRowId={(row) => row._id}
+      />
     </div>
   );
 };

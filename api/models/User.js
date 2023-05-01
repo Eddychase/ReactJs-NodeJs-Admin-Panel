@@ -21,7 +21,6 @@ const UserSchema = new mongoose.Schema(
     },
     isAdmin: {
       type: Boolean,
-      default: false,
     },
     user: {
       type: mongoose.Schema.Types.ObjectId,

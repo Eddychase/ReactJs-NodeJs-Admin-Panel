@@ -23,16 +23,9 @@ export const userInputs = [
     type: "password",
   },
   {
-    id: "country",
-    label: "Country",
-    type: "text",
-    placeholder: "USA",
-  },
-  {
-    id: "city",
-    label: "City",
-    type: "text",
-    placeholder: "USA",
+    id: "isAdmin",
+    label: "IsAdmin",
+    placeholder: "true",
   },
 ];
 

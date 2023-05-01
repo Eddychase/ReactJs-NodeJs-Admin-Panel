@@ -30,13 +30,9 @@ const Sidebar = () => {
             <span>Dashboard</span>
           </li>
           </Link>
+          
           <p className="title">LISTS</p>
-          <Link to="/users" style={{ textDecoration: "none" }}>
-            <li>
-              <PersonOutlineIcon className="icon" />
-              <span>Users</span>
-            </li>
-          </Link>
+          
         
           <Link to="/products" style={{ textDecoration: "none" }}>
             <li>
@@ -53,14 +49,7 @@ const Sidebar = () => {
             </Link>
           
           <p className="title">USEFUL</p>
-          <li>
-            <InsertChartIcon className="icon" />
-            <span>Stats</span>
-          </li>
-          <li>
-            <SettingsApplicationsIcon className="icon" />
-            <span>Settings</span>
-          </li>
+         
           <p className="title">USER</p>
           <li>
             <AccountCircleOutlinedIcon className="icon" />

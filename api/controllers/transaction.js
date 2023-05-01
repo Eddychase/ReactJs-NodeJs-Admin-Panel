@@ -96,3 +96,37 @@ export const deleteTransaction = async (req, res, next) => {
       next(err);
     }
   };
+
+  export const getFilteredTransactions = async (req, res) => {
+    const searchQuery = req.query.search || "";
+    const regex = new RegExp(searchQuery, "i");
+    const transactions = await Transaction.find({
+      $or: [{ productName: regex }, { paymentMethod: regex }, { status: regex }]
+    }).populate("product", "name");
+    res.status(200).json(transactions);
+  };
+
+  export const deleteAllTransactions = async (req, res, next) => {
+    try {
+      // Find all transactions in the database
+      const transactions = await Transaction.find();
+  
+      // Loop through each transaction and update the product quantity
+      for (const transaction of transactions) {
+        const foundProduct = await Product.findById(transaction.product);
+        if (!foundProduct) {
+          return res.status(404).json({ message: "Product not found" });
+        }
+        foundProduct.quantity += transaction.quantity;
+        await foundProduct.save();
+      }
+  
+      // Delete all transactions from the database
+      await Transaction.deleteMany();
+  
+      res.status(200).json({ message: "All transactions deleted successfully" });
+    } catch (err) {
+      next(err);
+    }
+  };
+  
