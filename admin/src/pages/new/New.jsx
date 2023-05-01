@@ -19,6 +19,7 @@ const New = ({ inputs, title }) => {
     e.preventDefault();
     const data = new FormData();
     data.append("file", file);
+    setFile("file")
     data.append("upload_preset", "upload");
     try {
 

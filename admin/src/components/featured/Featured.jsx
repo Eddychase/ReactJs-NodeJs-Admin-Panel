@@ -1,7 +1,6 @@
 import "./featured.scss";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import KeyboardArrowUpOutlinedIcon from "@mui/icons-material/KeyboardArrowUpOutlined";

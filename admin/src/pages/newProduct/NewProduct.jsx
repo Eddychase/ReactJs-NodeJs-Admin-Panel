@@ -7,7 +7,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const NewProduct = () => {
-  const [file, setFiles] = useState("");
+  const [file, setFile] = useState("");
   const [info, setInfo] = useState([]);
   const navigate = useNavigate();
 
@@ -23,6 +23,7 @@ const NewProduct = () => {
     e.preventDefault();
     const data = new FormData();
           data.append("file", file);
+          setFile("file")
           data.append("upload_preset", "upload");
     try {
 
