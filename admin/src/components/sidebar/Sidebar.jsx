@@ -31,7 +31,7 @@ const Sidebar = () => {
           <p className="title">LISTS</p>
           
         
-          <Link to="/api/products" style={{ textDecoration: "none" }}>
+          <Link to="/products" style={{ textDecoration: "none" }}>
             <li>
               <CreditCardIcon className="icon" />
               <span>Products</span>
