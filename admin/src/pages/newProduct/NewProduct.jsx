@@ -44,16 +44,7 @@ const NewProduct = () => {
           <h1>Add New Product</h1>
         </div>
         <div className="bottom">
-          <div className="left">
-            <img
-              src={
-                file
-                  ? URL.createObjectURL(file[0])
-                  : "https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"
-              }
-              alt=""
-            />
-          </div>
+          
           <div className="right">
             <form>
               
