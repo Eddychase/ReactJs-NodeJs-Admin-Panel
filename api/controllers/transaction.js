@@ -62,6 +62,20 @@ export const getTransactions = async (req, res, next) => {
   }
 };
 
+export const updateTransaction = async (req,res,next) => {
+  try{
+      const updatedTransaction = await Transaction.findByIdAndUpdate(
+          req.params.id, 
+          {$set:req.body},
+          {new:true}
+          )
+      res.status(200).json(updatedTransaction);
+      }catch (err) {
+          next(err);
+        }
+}
+
+
 
 export const deleteTransaction = async (req, res, next) => {
     try {
