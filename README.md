@@ -20,6 +20,10 @@ This is a web application project for creating an admin panel that allows a user
     <img src="admin/public/admintranform.png" alt="Image 1" width="350">
     <img src="admin/public/adminproductsform.png" alt="Image 2" width="350">
 </div>
+<div style="display: flex; justify-content: space-between;">
+    <img src="admin/public/admintranform.png" alt="Image 1" width="350">
+    <img src="admin/public/adminproductsform.png" alt="Image 2" width="350">
+</div>
 
 ## Table of Contents
 
