@@ -3,9 +3,7 @@
 This is a web application project for creating an admin panel that allows a user to add products and make transactions and view the monetary progress of their business using React.js and Node.js.
 
 <div style="display: flex; justify-content: space-between;">
-    <img src="admin/static/adminhome.png" alt="Image 1" width="300">
-    <img src="admin/static/adminproducts.png" alt="Image 2" width="300">
-    <img src="admin/static/admintrans.png" alt="Image 3" width="300">
+    <img src="admin/public/adminhome.png" alt="Image 1" >
 </div>
 
 ## Features
@@ -15,6 +13,13 @@ This is a web application project for creating an admin panel that allows a user
 - Responsive and modern user interface built with React.js and Material-UI
 - Interactive charts powered by recharts for data visualization
 - Calendar integration using FullCalendar for managing events and due dates
+
+- <div style="display: flex; justify-content: space-between;">
+    <img src="admin/public/adminproducts.png" alt="Image 2" width="350">
+    <img src="admin/public/admintrans.png" alt="Image 3" width="350">
+    <img src="admin/public/admintranform.png" alt="Image 1" width="350">
+    <img src="admin/public/adminproductsform.png" alt="Image 2" width="350">
+</div>
 
 ## Table of Contents
 
