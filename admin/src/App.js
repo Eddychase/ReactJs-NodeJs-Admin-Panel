@@ -75,7 +75,7 @@ function App() {
                 }
               />
               <Route
-                path=":productId"
+                path=":id"
                 element={
                   <ProtectedRoute>
                     <Single />
@@ -101,7 +101,7 @@ function App() {
                 }
               />
               <Route
-                path=":productId"
+                path=":id"
                 element={
                   <ProtectedRoute>
                     <Single />

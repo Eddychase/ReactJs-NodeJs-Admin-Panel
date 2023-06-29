@@ -18,7 +18,7 @@ const Featured = () => {
 
   useEffect(() => {
     axios
-      .get("https://admin-panel-shop.onrender.com/api/transactions")
+      .get("http://localhost:8800/api/transactions")
       .then((response) => {
         const transactions = response.data;
         const numTransactions = transactions.length;
@@ -90,7 +90,7 @@ const Featured = () => {
 
   
     axios
-      .get("https://admin-panel-shop.onrender.com/api/products")
+      .get("http://localhost:8800/api/products")
       .then((response) => {
         const products = response.data;
         const totalBuyingPrice = products.reduce(
@@ -103,7 +103,7 @@ const Featured = () => {
   }, []);
 
   useEffect(() => {
-    setProfit(totalPrice - totalBuyingPrice);
+    setProfit(  totalBuyingPrice - totalPrice);
   }, [totalPrice, totalBuyingPrice]);
 
 
@@ -114,7 +114,7 @@ const Featured = () => {
       <div className="bottom">
       <h4 className="title">TRANSACTIONS</h4>
         <div className="featuredChart">
-          <CircularProgressbar value={totalTransactions} text={dailyTransactions.length} strokeWidth={5} />
+          <CircularProgressbar value={totalTransactions} text={totalTransactions} strokeWidth={5} />
         </div>
         <div className="summary">
           <div className="item">
@@ -128,7 +128,7 @@ const Featured = () => {
             <div className="itemTitle">Last Week</div>
             <div className="itemResult positive">
               <KeyboardArrowUpOutlinedIcon fontSize="small"/>
-              <div className="resultAmount">{weeklyTotalPrice}</div>
+              <div className="resultAmount">250000</div>
             </div>
           </div>
           <div className="item">

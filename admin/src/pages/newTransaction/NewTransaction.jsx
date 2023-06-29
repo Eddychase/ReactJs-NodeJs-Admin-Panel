@@ -15,7 +15,7 @@ const NewTransaction = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get("https://admin-panel-shop.onrender.com/api/products");
+        const response = await axios.get("http://localhost:8800/api/products");
         setProductList(response.data);
       } catch (err) {
         console.log(err);
@@ -40,7 +40,7 @@ const NewTransaction = () => {
         productId: selectedProduct,
       };
       await axios.post(
-        "https://admin-panel-shop.onrender.com/api/transactions",
+        "http://localhost:8800/api/transactions",
         newTransaction
       );
       navigate("/");
